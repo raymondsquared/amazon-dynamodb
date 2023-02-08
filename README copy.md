@@ -1,13 +1,13 @@
-# :zap: Amazon DynamoDB
+# :zap: Amazon EventBridge
 
-![GitHub repo size](https://img.shields.io/github/repo-size/raymondsquared/amazon-dynamodb?style=plastic)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/raymondsquared/amazon-dynamodb?style=plastic)
-![GitHub Repo stars](https://img.shields.io/github/stars/raymondsquared/amazon-dynamodb?style=plastic)
-![GitHub last commit](https://img.shields.io/github/last-commit/raymondsquared/amazon-dynamodb?style=plastic)
+![GitHub repo size](https://img.shields.io/github/repo-size/raymondsquared/amazon-eventbridge?style=plastic)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/raymondsquared/amazon-eventbridge?style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/stars/raymondsquared/amazon-eventbridge?style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/raymondsquared/amazon-eventbridge?style=plastic)
 
 ## :page_facing_up: Table of contents
 
-- [:zap: Amazon DynamoDB](#zap-amazon-dynamodb)
+- [:zap: Amazon EventBridge](#zap-amazon-eventbridge)
   - [:page_facing_up: Table of contents](#page_facing_up-table-of-contents)
   - [:books: General info](#books-general-info)
   - [:camera: Screenshots](#camera-screenshots)
@@ -23,7 +23,7 @@
 
 ## :books: General info
 
-- Sample codes to publish and consume from AWS DynamoDB with roles
+- Sample codes to publish and consume from AWS EventBridge with roles
 
 ## :camera: Screenshots
 
@@ -32,7 +32,7 @@
 ## :signal_strength: Technologies
 
 - TypeScript 4.9
-- AWS dynamodb
+- AWS EventBridge
 
 ## :floppy_disk: Setup
 
