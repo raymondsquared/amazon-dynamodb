@@ -1,50 +1,14 @@
-import {
-  DynamoDBClient, DynamoDBClientConfig,
-  DescribeTableCommand, DescribeTableCommandInput,
-  PutItemCommand, PutItemCommandInput,
-} from '@aws-sdk/client-dynamodb';
-
-// a client can be shared by different commands.
-const config: DynamoDBClientConfig = {
-  region: 'ap-southeast-2',
-};
-const dynamoDBClient = new DynamoDBClient(config);
+import { dynamoDBClient, describeTable, putItem, getItem } from './dynamodb.';
+import { Music } from './music';
 
 const run = async () => {
   try {
-    const params: DescribeTableCommandInput = {
-      TableName: 'ray-music',
-    };
-
-    const data = await dynamoDBClient.send(new DescribeTableCommand(params));
-    console.log('Success, event sent; requestID:', data);
-    // return data;
+    const describeOutput = await describeTable();
+    console.log('Success, event sent; requestID:', describeOutput);
+    return;
   } catch (err) {
     console.log('Error', err);
   }
-};
-
-interface Music {
-  artist: string;
-  songTitle: string;
-  albumTitle: string;
-  awards: number;
-}
-
-const putItem = async (music: Music) => {
-  await dynamoDBClient.send(
-    new PutItemCommand(
-      {
-        TableName: 'ray-music',
-        Item: {
-          artist: { S: music.artist },
-          songTitle: { S: music.songTitle },
-          albumTitle: { S: music.albumTitle },
-          awards: { N: music.awards.toString() },
-        },
-      } as PutItemCommandInput,
-    ),
-  );
 };
 
 const init = async () => {
@@ -68,5 +32,16 @@ const init = async () => {
   }
 };
 
-run();
-init();
+const get = async () => {
+  try {
+    const getOutput = await getItem('Acme Band', 'Happy Day');
+    console.log({ getOutput });
+    return;
+  } catch (err) {
+    console.log('Error', err);
+  }
+};
+
+// run();
+// init();
+get();
