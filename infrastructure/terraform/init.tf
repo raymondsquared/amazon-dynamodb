@@ -3,12 +3,12 @@ provider "aws" {
   profile = "paw"
 }
 
-variable "module_name" {
-  default = "ray-dynamodb"
+variable "table_name" {
+  default = "ray-music"
 }
 
 locals {
   tags = {
-    name = var.module_name
+    name = var.table_name
   }
 }
